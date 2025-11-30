@@ -131,7 +131,7 @@ def inject_payload(cover_file: str, secret_file: str, output_file: str) -> dict:
     
     if message_bits > capacity:
         raise ValueError(
-            f"Message too large! Need {message_bits:,} bits, but audio only has {capacity:,} bytes available."
+            f"Message too large! Need {message_bits:,} bits, but audio only has {capacity:,} bits available."
         )
     
     usage_percent = (message_bits / capacity) * 100

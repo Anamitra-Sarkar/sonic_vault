@@ -151,6 +151,11 @@ Examples:
     
     print_banner()
     
+    # Validate amplitude range
+    if not 0 <= args.amplitude <= 32767:
+        print(f"{Colors.RED}[ERROR]{Colors.ENDC} Amplitude must be between 0 and 32767, got: {args.amplitude}")
+        sys.exit(1)
+    
     try:
         stats = generate_wav(
             output_file=args.output,

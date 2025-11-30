@@ -19,7 +19,7 @@ SONIC-VAULT injects secret payloads into `.wav` files by manipulating the Least 
 
 ## 📋 Requirements
 
-- **Python:** 3.10+
+- **Python:** 3.6+
 - **Libraries:** `wave` (Native), `struct`, `math` (all built-in)
 
 No external dependencies required! 🎉

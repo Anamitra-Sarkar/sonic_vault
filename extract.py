@@ -29,6 +29,9 @@ class Colors:
 # Delimiter to mark the end of the hidden message
 DELIMITER = '#####'
 
+# Maximum bytes to scan for hidden message (prevent hanging on large files)
+MAX_SEARCH_BYTES = 10000000
+
 
 def print_banner():
     """Print the hacker-style banner."""
@@ -121,7 +124,7 @@ def extract_payload(stego_file: str, output_file: str = None) -> dict:
     
     # We process in chunks for efficiency and progress display
     chunk_size = 8  # Process 8 bits (1 character) at a time
-    max_search = min(total_bytes, 10000000)  # Limit search to prevent hanging on large files
+    max_search = min(total_bytes, MAX_SEARCH_BYTES)  # Limit search to prevent hanging on large files
     
     for i in range(0, max_search, chunk_size):
         # Extract 8 LSBs to form one character
